@@ -77,8 +77,8 @@ El proyecto está configurado para desplegarse en cualquier hosting estático:
 ## 📞 Contacto
 
 - **WhatsApp**: +34 600 000 000
-- **Email**: hola@sumat.agency
-- **Calendly**: https://calendly.com/sumat/consulta
+- **Email**: agenciasumat@gmail.com
+- **Calendly**: https://calendly.com/agenciasumat/30min
 
 ## 📄 Licencia
 

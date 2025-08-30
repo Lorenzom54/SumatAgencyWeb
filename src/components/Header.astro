@@ -18,12 +18,20 @@
         <a href="#clientes" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Clientes</a>
         <a href="#sectores" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Sectores</a>
         <a href="#sobre-nosotros" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Sobre nosotros</a>
-        <a href="#contacto" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Contacto</a>
       </nav>
 
+      <!-- Botón de contacto Desktop/Tablet -->
+      <div class="hidden md:flex items-center">
+        <a href="#contacto" 
+           class="bg-sumat-navy hover:bg-sumat-teal text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+          <i class="fas fa-envelope mr-2"></i>
+          Contacto
+        </a>
+      </div>
+
       <!-- Botón menú móvil -->
-      <div class="flex items-center">
-        <button id="mobile-menu-btn" class="md:hidden bg-sumat-navy hover:bg-sumat-teal text-white p-3 rounded-lg transition-all duration-300 shadow-lg">
+      <div class="flex items-center md:hidden">
+        <button id="mobile-menu-btn" class="bg-sumat-navy hover:bg-sumat-teal text-white p-3 rounded-lg transition-all duration-300 shadow-lg">
           <i class="fas fa-bars text-lg"></i>
         </button>
       </div>

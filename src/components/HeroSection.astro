@@ -3,7 +3,7 @@
 const content = {
   es: {
     title: "Conectamos tu negocio con más clientes",
-    subtitle: "Marketing creativo para clínicas, discotecas y gastronomía",
+    subtitle: "Marketing digital para clínicas, discotecas y gastronomía",
     cta: "Hablemos hoy"
   },
   en: {
@@ -19,50 +19,28 @@ const currentContent = content[currentLang as keyof typeof content];
 
 <section id="inicio" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-sumat-beige to-white pt-20">
   <div class="container mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Contenido -->
-      <div class="text-center lg:text-left animate-fade-in">
-        <h1 class="text-4xl md:text-6xl font-oddlini text-sumat-navy mb-6 leading-tight">
-          {currentContent.title}
-        </h1>
-        <p class="text-xl md:text-2xl text-sumat-teal mb-8 leading-relaxed">
-          {currentContent.subtitle}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20de%20marketing" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
-            <i class="fab fa-whatsapp mr-2"></i>
-            {currentContent.cta}
-          </a>
-          <a href="https://calendly.com/sumat/consulta" 
+    <div class="max-w-4xl mx-auto text-center animate-fade-in">
+      <h1 class="text-4xl md:text-6xl font-oddlini text-sumat-navy mb-6 leading-tight">
+        {currentContent.title}
+      </h1>
+      <p class="text-xl md:text-2xl text-sumat-teal mb-8 leading-relaxed">
+        {currentContent.subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20de%20marketing" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+          <i class="fab fa-whatsapp mr-2"></i>
+          {currentContent.cta}
+        </a>
+                  <a href="https://calendly.com/agenciasumat/30min" 
              target="_blank" 
              rel="noopener noreferrer"
              class="border-2 border-sumat-navy text-sumat-navy hover:bg-sumat-navy hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
             <i class="far fa-calendar-alt mr-2"></i>
             Agenda reunión
           </a>
-        </div>
-      </div>
-
-      <!-- Imagen/Vídeo -->
-      <div class="animate-slide-in-right">
-        <div class="relative">
-          <div class="bg-sumat-sky rounded-2xl p-8 shadow-xl">
-            <div class="aspect-video bg-gradient-to-br from-sumat-teal to-sumat-navy rounded-xl flex items-center justify-center">
-              <div class="text-center text-white">
-                <i class="fas fa-chart-line text-6xl mb-4"></i>
-                <p class="text-xl font-semibold">Marketing Digital</p>
-                <p class="text-sm opacity-90">Estrategias que generan resultados</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Elementos decorativos -->
-          <div class="absolute -top-4 -left-4 w-20 h-20 bg-sumat-teal rounded-full opacity-20"></div>
-          <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-sumat-navy rounded-full opacity-20"></div>
-        </div>
       </div>
     </div>
 

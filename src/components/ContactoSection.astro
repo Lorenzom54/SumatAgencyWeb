@@ -1,42 +1,13 @@
 ---
-// Contenido en español e inglés
+// Contenido en español
 const content = {
-  es: {
-    title: "Contacto",
-    subtitle: "El siguiente cliente de éxito puedes ser tú",
-    description: "¿Listo para transformar tu negocio? Hablemos de tus objetivos y cómo podemos ayudarte a alcanzarlos.",
-    form: {
-      name: "Nombre",
-      email: "Email",
-      message: "Mensaje",
-      submit: "Enviar mensaje"
-    },
-    contact: {
-      whatsapp: "WhatsApp",
-      phone: "Llamada",
-      calendly: "Calendly"
-    }
-  },
-  en: {
-    title: "Contact",
-    subtitle: "You could be our next success story",
-    description: "Ready to transform your business? Let's talk about your goals and how we can help you achieve them.",
-    form: {
-      name: "Name",
-      email: "Email",
-      message: "Message",
-      submit: "Send message"
-    },
-    contact: {
-      whatsapp: "WhatsApp",
-      phone: "Call",
-      calendly: "Calendly"
-    }
+  title: "Contacto",
+  contact: {
+    whatsapp: "WhatsApp",
+    phone: "Llamada",
+    calendly: "Calendly"
   }
 };
-
-const currentLang = 'es';
-const currentContent = content[currentLang as keyof typeof content];
 ---
 
 <section id="contacto" class="py-20 bg-white">
@@ -44,80 +15,13 @@ const currentContent = content[currentLang as keyof typeof content];
     <!-- Header -->
     <div class="text-center mb-16 animate-fade-in">
       <h2 class="text-4xl md:text-5xl font-oddlini text-sumat-navy mb-6">
-        {currentContent.title}
+        {content.title}
       </h2>
-      <h3 class="text-2xl text-sumat-teal mb-6">
-        {currentContent.subtitle}
-      </h3>
-      <p class="text-lg text-sumat-teal max-w-3xl mx-auto">
-        {currentContent.description}
-      </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12">
-      <!-- Formulario -->
-      <div class="animate-slide-in-left">
-        <div class="bg-sumat-beige rounded-2xl p-8 shadow-lg">
-          <h3 class="text-2xl font-semibold text-sumat-navy mb-6">
-            Envíanos un mensaje
-          </h3>
-          
-          <form class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-sumat-navy mb-2">
-                {currentContent.form.name}
-              </label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                required
-                class="w-full px-4 py-3 border border-sumat-sky rounded-lg focus:ring-2 focus:ring-sumat-navy focus:border-transparent transition-all duration-300"
-                placeholder="Tu nombre completo"
-              >
-            </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-medium text-sumat-navy mb-2">
-                {currentContent.form.email}
-              </label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                required
-                class="w-full px-4 py-3 border border-sumat-sky rounded-lg focus:ring-2 focus:ring-sumat-navy focus:border-transparent transition-all duration-300"
-                placeholder="tu@email.com"
-              >
-            </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-sumat-navy mb-2">
-                {currentContent.form.message}
-              </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
-                required
-                class="w-full px-4 py-3 border border-sumat-sky rounded-lg focus:ring-2 focus:ring-sumat-navy focus:border-transparent transition-all duration-300 resize-none"
-                placeholder="Cuéntanos sobre tu proyecto..."
-              ></textarea>
-            </div>
-            
-            <button 
-              type="submit"
-              class="w-full bg-sumat-navy hover:bg-sumat-teal text-white py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <i class="fas fa-paper-plane mr-2"></i>
-              {currentContent.form.submit}
-            </button>
-          </form>
-        </div>
-      </div>
-
+    <div class="max-w-4xl mx-auto">
       <!-- Información de contacto -->
-      <div class="animate-slide-in-right">
+      <div class="animate-fade-in">
         <div class="space-y-8">
           <!-- Botones de contacto grandes -->
           <div class="space-y-4">
@@ -126,71 +30,22 @@ const currentContent = content[currentLang as keyof typeof content];
                rel="noopener noreferrer"
                class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white p-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
               <i class="fab fa-whatsapp text-2xl mr-4"></i>
-              {currentContent.contact.whatsapp}
+              {content.contact.whatsapp}
             </a>
             
             <a href="tel:+34600000000" 
                class="flex items-center justify-center bg-sumat-navy hover:bg-sumat-teal text-white p-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
               <i class="fas fa-phone text-2xl mr-4"></i>
-              {currentContent.contact.phone}
+              {content.contact.phone}
             </a>
             
-            <a href="https://calendly.com/sumat/consulta" 
+            <a href="https://calendly.com/agenciasumat/30min" 
                target="_blank" 
                rel="noopener noreferrer"
                class="flex items-center justify-center border-2 border-sumat-navy text-sumat-navy hover:bg-sumat-navy hover:text-white p-6 rounded-xl font-semibold text-lg transition-all duration-300">
               <i class="far fa-calendar-alt text-2xl mr-4"></i>
-              {currentContent.contact.calendly}
+              {content.contact.calendly}
             </a>
-          </div>
-
-          <!-- Información adicional -->
-          <div class="bg-sumat-sky rounded-2xl p-8">
-            <h4 class="text-xl font-semibold text-sumat-navy mb-6">
-              ¿Por qué elegir SUMAT?
-            </h4>
-            
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-sumat-navy rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-sumat-teal">Consulta inicial gratuita</p>
-              </div>
-              
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-sumat-navy rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-sumat-teal">Estrategias personalizadas</p>
-              </div>
-              
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-sumat-navy rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-sumat-teal">Reportes mensuales detallados</p>
-              </div>
-              
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-sumat-navy rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-sumat-teal">Soporte continuo</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Horarios -->
-          <div class="bg-white border border-sumat-sky rounded-2xl p-6">
-            <h4 class="text-lg font-semibold text-sumat-navy mb-4">
-              Horarios de atención
-            </h4>
-            <div class="space-y-2 text-sumat-teal">
-              <p><strong>Lunes - Viernes:</strong> 9:00 - 18:00</p>
-              <p><strong>Sábados:</strong> 10:00 - 14:00</p>
-              <p><strong>Domingos:</strong> Cerrado</p>
-            </div>
           </div>
         </div>
       </div>
@@ -198,28 +53,4 @@ const currentContent = content[currentLang as keyof typeof content];
   </div>
 </section>
 
-<script>
-  // Manejo del formulario
-  const form = document.querySelector('form');
-  
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Aquí iría la lógica para enviar el formulario
-    // Por ahora, simulamos el envío
-    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const originalText = submitBtn?.textContent || '';
-    
-    if (submitBtn) {
-      submitBtn.textContent = 'Enviando...';
-      submitBtn.disabled = true;
-      
-      setTimeout(() => {
-        alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-        form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 2000);
-    }
-  });
-</script>
+
