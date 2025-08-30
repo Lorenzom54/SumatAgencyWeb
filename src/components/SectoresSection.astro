@@ -1,0 +1,136 @@
+---
+const sectores = [
+  {
+    title: "Clínicas dentales y estéticas",
+    description: "Marketing especializado para el sector sanitario",
+    icon: "fas fa-tooth",
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50"
+  },
+  {
+    title: "Discotecas y ocio nocturno",
+    description: "Estrategias para maximizar la asistencia",
+    icon: "fas fa-music",
+    color: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50"
+  },
+  {
+    title: "Restauración & gastronomía",
+    description: "Marketing que llena restaurantes",
+    icon: "fas fa-utensils",
+    color: "from-orange-500 to-orange-600",
+    bgColor: "bg-orange-50"
+  },
+  {
+    title: "Inmobiliarias & turismo",
+    description: "Vende más propiedades y experiencias",
+    icon: "fas fa-home",
+    color: "from-green-500 to-green-600",
+    bgColor: "bg-green-50"
+  }
+];
+---
+
+<section id="sectores" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-4xl md:text-5xl font-oddlini text-sumat-navy mb-6">
+        Especialistas por Sectores
+      </h2>
+      <p class="text-xl text-sumat-teal max-w-3xl mx-auto">
+        Conocemos las particularidades de cada industria para crear estrategias efectivas
+      </p>
+    </div>
+
+    <!-- Grid de sectores -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {sectores.map((sector, index) => (
+        <div class="group relative animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+          <div class={`${sector.bgColor} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden relative`}>
+            <!-- Fondo decorativo -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${sector.color} opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
+            
+            <!-- Icono -->
+            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${sector.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
+              <i class={`${sector.icon} text-white text-2xl`}></i>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-sumat-navy mb-4 group-hover:text-sumat-teal transition-colors duration-300">
+                {sector.title}
+              </h3>
+              <p class="text-sumat-teal leading-relaxed mb-6">
+                {sector.description}
+              </p>
+              
+              <!-- CTA -->
+              <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20para%20el%20sector%20de%20{sector.title.replace(/\s+/g, '%20')}" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center bg-sumat-navy hover:bg-sumat-teal text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Consulta especializada
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sección de estadísticas -->
+    <div class="mt-20 bg-sumat-sky rounded-2xl p-8 md:p-12 animate-fade-in">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-oddlini text-sumat-navy mb-4">
+          Resultados que hablan por sí solos
+        </h3>
+        <p class="text-lg text-sumat-teal">
+          Nuestras estrategias generan resultados medibles
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-sumat-navy mb-2">+150%</div>
+          <p class="text-sumat-teal">Incremento promedio en ventas</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-sumat-navy mb-2">+300%</div>
+          <p class="text-sumat-teal">Más tráfico web</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-sumat-navy mb-2">+200%</div>
+          <p class="text-sumat-teal">Engagement en redes</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-sumat-navy mb-2">95%</div>
+          <p class="text-sumat-teal">Clientes satisfechos</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="text-center mt-16 animate-fade-in">
+      <p class="text-lg text-sumat-teal mb-6">
+        ¿Tu sector no aparece? ¡Hablemos de tus necesidades específicas!
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20para%20mi%20sector" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+          <i class="fab fa-whatsapp mr-2"></i>
+          Consulta personalizada
+        </a>
+        <a href="https://calendly.com/sumat/consulta" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="border-2 border-sumat-navy text-sumat-navy hover:bg-sumat-navy hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+          <i class="far fa-calendar-alt mr-2"></i>
+          Agenda reunión
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

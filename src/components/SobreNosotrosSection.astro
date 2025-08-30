@@ -1,0 +1,172 @@
+---
+// Contenido en español e inglés
+const content = {
+  es: {
+    title: "Sobre nosotros",
+    subtitle: "Somos una agencia fresca y flexible",
+    description: "Creamos estrategias adaptadas a cada sector para aumentar tu visibilidad y ventas.",
+    cta: "Agenda una reunión",
+    values: [
+      {
+        title: "Flexibilidad",
+        description: "Nos adaptamos a tus necesidades y presupuesto"
+      },
+      {
+        title: "Resultados",
+        description: "Enfocados en métricas que importan"
+      },
+      {
+        title: "Transparencia",
+        description: "Comunicación clara y reportes detallados"
+      }
+    ]
+  },
+  en: {
+    title: "About us",
+    subtitle: "We are a fresh and flexible agency",
+    description: "We create strategies adapted to each sector to increase your visibility and sales.",
+    cta: "Schedule a meeting",
+    values: [
+      {
+        title: "Flexibility",
+        description: "We adapt to your needs and budget"
+      },
+      {
+        title: "Results",
+        description: "Focused on metrics that matter"
+      },
+      {
+        title: "Transparency",
+        description: "Clear communication and detailed reports"
+      }
+    ]
+  }
+};
+
+const currentLang = 'es';
+const currentContent = content[currentLang as keyof typeof content];
+---
+
+<section id="sobre-nosotros" class="py-20 bg-sumat-beige">
+  <div class="container mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Contenido -->
+      <div class="animate-slide-in-left">
+        <h2 class="text-4xl md:text-5xl font-oddlini text-sumat-navy mb-6">
+          {currentContent.title}
+        </h2>
+        <h3 class="text-2xl text-sumat-teal mb-6">
+          {currentContent.subtitle}
+        </h3>
+        <p class="text-lg text-sumat-teal leading-relaxed mb-8">
+          {currentContent.description}
+        </p>
+
+        <!-- Valores -->
+        <div class="space-y-6 mb-8">
+          {currentContent.values.map((value, index) => (
+            <div class="flex items-start space-x-4 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class="w-8 h-8 bg-sumat-navy rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <i class="fas fa-check text-white text-sm"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sumat-navy mb-1">{value.title}</h4>
+                <p class="text-sumat-teal">{value.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <a href="https://calendly.com/sumat/consulta" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+          <i class="far fa-calendar-alt mr-2"></i>
+          {currentContent.cta}
+        </a>
+      </div>
+
+      <!-- Imagen/Ilustración -->
+      <div class="animate-slide-in-right">
+        <div class="relative">
+          <!-- Tarjeta principal -->
+          <div class="bg-white rounded-2xl p-8 shadow-xl">
+            <div class="aspect-square bg-gradient-to-br from-sumat-sky to-sumat-teal rounded-xl flex items-center justify-center">
+              <div class="text-center text-white">
+                <i class="fas fa-rocket text-6xl mb-4"></i>
+                <p class="text-2xl font-semibold mb-2">SUMAT</p>
+                <p class="text-sm opacity-90">Marketing que impulsa tu negocio</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elementos decorativos -->
+          <div class="absolute -top-4 -left-4 w-16 h-16 bg-sumat-teal rounded-full opacity-20"></div>
+          <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-sumat-navy rounded-full opacity-20"></div>
+          
+          <!-- Tarjetas flotantes -->
+          <div class="absolute -top-8 -right-8 bg-white rounded-xl p-4 shadow-lg animate-bounce">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-chart-line text-white"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-sumat-navy">+150%</p>
+                <p class="text-xs text-sumat-teal">Ventas</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-8 -left-8 bg-white rounded-xl p-4 shadow-lg animate-bounce" style="animation-delay: 0.5s">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-users text-white"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-sumat-navy">+300%</p>
+                <p class="text-xs text-sumat-teal">Tráfico</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de equipo -->
+    <div class="mt-20 text-center animate-fade-in">
+      <h3 class="text-3xl font-oddlini text-sumat-navy mb-8">
+        Nuestro equipo
+      </h3>
+      <p class="text-lg text-sumat-teal mb-12 max-w-3xl mx-auto">
+        Profesionales apasionados por el marketing digital con años de experiencia en diferentes sectores
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div class="w-20 h-20 bg-sumat-navy rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-user-tie text-white text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-sumat-navy mb-2">Estrategia Digital</h4>
+          <p class="text-sumat-teal text-sm">Especialistas en planificación y ejecución de campañas</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div class="w-20 h-20 bg-sumat-teal rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-palette text-white text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-sumat-navy mb-2">Diseño Creativo</h4>
+          <p class="text-sumat-teal text-sm">Creativos que convierten ideas en experiencias visuales</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div class="w-20 h-20 bg-sumat-sky rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-chart-bar text-sumat-navy text-2xl"></i>
+          </div>
+          <h4 class="font-semibold text-sumat-navy mb-2">Análisis de Datos</h4>
+          <p class="text-sumat-teal text-sm">Expertos en métricas y optimización de resultados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

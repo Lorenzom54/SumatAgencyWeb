@@ -1,0 +1,102 @@
+---
+const servicios = [
+  {
+    icon: "fas fa-ad",
+    title: "Marketing Digital",
+    description: "Google & Meta Ads para maximizar tu ROI",
+    color: "from-sumat-navy to-sumat-teal"
+  },
+  {
+    icon: "fas fa-share-alt",
+    title: "Gestión de Redes Sociales",
+    description: "Contenido estratégico que conecta con tu audiencia",
+    color: "from-sumat-teal to-sumat-sky"
+  },
+  {
+    icon: "fas fa-palette",
+    title: "Diseño Gráfico",
+    description: "Identidad visual que destaca tu marca",
+    color: "from-sumat-sky to-sumat-beige"
+  },
+  {
+    icon: "fas fa-video",
+    title: "Contenido Audiovisual",
+    description: "Vídeos y fotos profesionales para tu negocio",
+    color: "from-sumat-navy to-sumat-teal"
+  },
+  {
+    icon: "fas fa-graduation-cap",
+    title: "Formación en Marketing Gastronómico",
+    description: "Capacita a tu equipo en estrategias digitales",
+    color: "from-sumat-teal to-sumat-sky"
+  },
+  {
+    icon: "fas fa-plane",
+    title: "Estrategia para Agencias de Viaje",
+    description: "Especialistas en turismo y experiencias",
+    color: "from-sumat-sky to-sumat-beige"
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-4xl md:text-5xl font-oddlini text-sumat-navy mb-6">
+        Nuestros Servicios
+      </h2>
+      <p class="text-xl text-sumat-teal max-w-3xl mx-auto">
+        Soluciones integrales de marketing digital adaptadas a cada sector
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {servicios.map((servicio, index) => (
+        <div class="group relative animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sumat-sky/20 group-hover:border-sumat-sky">
+            <!-- Icono con gradiente -->
+            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${servicio.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <i class={`${servicio.icon} text-white text-2xl`}></i>
+            </div>
+            
+            <!-- Contenido -->
+            <h3 class="text-xl font-semibold text-sumat-navy mb-4 group-hover:text-sumat-teal transition-colors duration-300">
+              {servicio.title}
+            </h3>
+            <p class="text-sumat-teal leading-relaxed">
+              {servicio.description}
+            </p>
+            
+            <!-- Hover effect -->
+            <div class="absolute inset-0 bg-sumat-sky/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-16 animate-fade-in">
+      <p class="text-lg text-sumat-teal mb-6">
+        ¿Necesitas una estrategia personalizada para tu negocio?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20de%20marketing" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+          <i class="fab fa-whatsapp mr-2"></i>
+          Consulta gratuita
+        </a>
+        <a href="https://calendly.com/sumat/consulta" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="border-2 border-sumat-navy text-sumat-navy hover:bg-sumat-navy hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+          <i class="far fa-calendar-alt mr-2"></i>
+          Agenda reunión
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

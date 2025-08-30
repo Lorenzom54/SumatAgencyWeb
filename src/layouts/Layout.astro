@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "SUMAT - Agencia de Marketing Digital. Conectamos tu negocio con más clientes." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      /* Estilos globales */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .font-oddlini {
+        font-family: 'Oddlini Semi Bold Ultra Expanded', 'Inter', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body class="bg-sumat-beige">
+    <slot />
+    
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/34600000000?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20de%20marketing" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+  </body>
+</html>
