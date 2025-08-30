@@ -1,6 +1,4 @@
 ---
-// Lógica para el selector de idioma
-const currentLang = 'es';
 ---
 
 <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-40 shadow-sm">
@@ -23,34 +21,35 @@ const currentLang = 'es';
         <a href="#contacto" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Contacto</a>
       </nav>
 
-      <!-- Selector de idioma y menú móvil -->
-      <div class="flex items-center space-x-4">
-        <!-- Selector de idioma -->
-        <div class="flex items-center space-x-2">
-          <button class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-300 ${currentLang === 'es' ? 'bg-sumat-navy text-white' : 'text-sumat-navy hover:bg-sumat-sky'}">
-            ES
-          </button>
-          <button class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-300 ${currentLang === 'en' ? 'bg-sumat-navy text-white' : 'text-sumat-navy hover:bg-sumat-sky'}">
-            EN
-          </button>
-        </div>
-
-        <!-- Botón menú móvil -->
-        <button id="mobile-menu-btn" class="md:hidden text-sumat-navy hover:text-sumat-teal transition-colors duration-300">
-          <i class="fas fa-bars text-xl"></i>
+      <!-- Botón menú móvil -->
+      <div class="flex items-center">
+        <button id="mobile-menu-btn" class="md:hidden bg-sumat-navy hover:bg-sumat-teal text-white p-3 rounded-lg transition-all duration-300 shadow-lg">
+          <i class="fas fa-bars text-lg"></i>
         </button>
       </div>
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-sumat-sky">
-      <nav class="flex flex-col space-y-4 pt-4">
-        <a href="#inicio" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Inicio</a>
-        <a href="#servicios" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Servicios</a>
-        <a href="#clientes" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Clientes</a>
-        <a href="#sectores" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Sectores</a>
-        <a href="#sobre-nosotros" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Sobre nosotros</a>
-        <a href="#contacto" class="text-sumat-navy hover:text-sumat-teal transition-colors duration-300">Contacto</a>
+    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-sumat-sky bg-white rounded-lg shadow-lg">
+      <nav class="flex flex-col space-y-2 pt-4 px-4">
+        <a href="#inicio" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-home mr-3"></i>Inicio
+        </a>
+        <a href="#servicios" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-cogs mr-3"></i>Servicios
+        </a>
+        <a href="#clientes" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-users mr-3"></i>Clientes
+        </a>
+        <a href="#sectores" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-industry mr-3"></i>Sectores
+        </a>
+        <a href="#sobre-nosotros" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-info-circle mr-3"></i>Sobre nosotros
+        </a>
+        <a href="#contacto" class="text-sumat-navy hover:text-sumat-teal hover:bg-sumat-sky/20 px-4 py-3 rounded-lg transition-all duration-300 font-medium">
+          <i class="fas fa-envelope mr-3"></i>Contacto
+        </a>
       </nav>
     </div>
   </div>
@@ -60,9 +59,24 @@ const currentLang = 'es';
   // Toggle menú móvil
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = mobileMenuBtn?.querySelector('i');
 
   mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    
+    if (isHidden) {
+      // Abrir menú
+      mobileMenu?.classList.remove('hidden');
+      menuIcon?.classList.remove('fa-bars');
+      menuIcon?.classList.add('fa-times');
+      mobileMenuBtn?.classList.add('bg-sumat-teal');
+    } else {
+      // Cerrar menú
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('fa-times');
+      menuIcon?.classList.add('fa-bars');
+      mobileMenuBtn?.classList.remove('bg-sumat-teal');
+    }
   });
 
   // Cerrar menú al hacer click en un enlace
@@ -70,6 +84,19 @@ const currentLang = 'es';
   mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('fa-times');
+      menuIcon?.classList.add('fa-bars');
+      mobileMenuBtn?.classList.remove('bg-sumat-teal');
     });
+  });
+
+  // Cerrar menú al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuBtn?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('fa-times');
+      menuIcon?.classList.add('fa-bars');
+      mobileMenuBtn?.classList.remove('bg-sumat-teal');
+    }
   });
 </script>

@@ -1,6 +1,4 @@
 ---
-// Lógica para el selector de idioma
-const currentLang = 'es';
 ---
 
 <footer class="bg-sumat-navy text-white py-12">
@@ -64,18 +62,7 @@ const currentLang = 'es';
           </div>
         </div>
 
-        <!-- Selector de idioma -->
-        <div class="mt-6">
-          <h5 class="text-sm font-semibold mb-2">Idioma</h5>
-          <div class="flex space-x-2">
-            <button class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-300 ${currentLang === 'es' ? 'bg-sumat-teal text-white' : 'bg-sumat-sky text-sumat-navy hover:bg-sumat-teal hover:text-white'}">
-              ES
-            </button>
-            <button class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-300 ${currentLang === 'en' ? 'bg-sumat-teal text-white' : 'bg-sumat-sky text-sumat-navy hover:bg-sumat-teal hover:text-white'}">
-              EN
-            </button>
-          </div>
-        </div>
+        
       </div>
     </div>
 
