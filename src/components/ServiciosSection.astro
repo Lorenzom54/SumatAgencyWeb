@@ -1,4 +1,4 @@
----
+S---
 const servicios = [
   {
     icon: "fas fa-ad",
@@ -30,15 +30,34 @@ const servicios = [
     description: "Capacita a tu equipo en estrategias digitales",
     color: "from-sumat-teal to-sumat-sky"
   },
+  // Nuevos servicios añadidos según la imagen
+  {
+    icon: "fas fa-laptop-code",
+    title: "Formaciones informáticas",
+    description: "Generación de chatbots, páginas web y automatización",
+    color: "from-sumat-navy to-sumat-teal"
+  },
+  {
+    icon: "fas fa-user-check",
+    title: "Sistemas de fichajes",
+    description: "Controla la hora a la que llegan y se marchan tus empleados de trabajar",
+    color: "from-sumat-teal to-sumat-sky"
+  },
+  {
+    icon: "fas fa-box-open",
+    title: "Pack digitalizador",
+    description: "Página web + sistema de fichajes + 1 mes de gestión de redes",
+    color: "from-sumat-sky to-sumat-beige"
+  }
 ];
 ---
 
-<section id="servicios" class="py-20 bg-white">
+<section id="servicios" class="py-20 bg-sumat-beige">
   <div class="container mx-auto px-4">
     <!-- Header -->
     <div class="text-center mb-16 animate-fade-in">
       <h2 class="text-4xl md:text-5xl font-oddlini text-sumat-navy mb-6">
-        Qué hacemos
+        QUÉ HACEMOS
       </h2>
       <p class="text-xl text-sumat-teal max-w-3xl mx-auto">
         Soluciones integrales de marketing digital adaptadas a cada sector
@@ -50,8 +69,8 @@ const servicios = [
       {servicios.map((servicio, index) => (
         <div class="group relative animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
           <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sumat-sky/20 group-hover:border-sumat-sky">
-            <!-- Icono con gradiente -->
-            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${servicio.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <!-- Icono sin gradiente ni efecto de fade, todos igual de color -->
+            <div class="w-16 h-16 rounded-xl bg-sumat-navy flex items-center justify-center mb-6">
               <i class={`${servicio.icon} text-white text-2xl`}></i>
             </div>
             

@@ -3,7 +3,7 @@
 const content = {
   es: {
     title: "Conectamos tu negocio con más clientes",
-    subtitle: "Marketing digital para clínicas, discotecas y gastronomía",
+    subtitle: "Soluciones digitales 360º",
     cta: "Hablemos hoy"
   },
   en: {
@@ -17,15 +17,15 @@ const currentLang = 'es';
 const currentContent = content[currentLang as keyof typeof content];
 ---
 
-<section id="inicio" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-sumat-beige to-white pt-20">
+<section id="inicio" class="min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-sumat-beige to-white">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center animate-fade-in">
       <h1 class="text-4xl md:text-6xl font-oddlini text-sumat-navy mb-6 leading-tight">
         {currentContent.title}
+        <p class="text-xl md:text-2xl text-sumat-teal mb-8 leading-relaxed">
+          {currentContent.subtitle}
+        </p>
       </h1>
-      <p class="text-xl md:text-2xl text-sumat-teal mb-8 leading-relaxed">
-        {currentContent.subtitle}
-      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="https://wa.me/34652592174?text=Hola%20SUMAT,%20me%20interesa%20vuestros%20servicios%20de%20marketing" 
              target="_blank" 

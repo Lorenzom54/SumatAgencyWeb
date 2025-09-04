@@ -2,7 +2,7 @@
 // Contenido en español e inglés
 const content = {
   es: {
-    title: "Por Qué Sumat",
+    title: "¿POR QUÉ SUMAT?",
     subtitle: "Y porqué somos la empresa con más resultados en el ultimo año",
     description: "Creamos estrategias adaptadas a cada sector para aumentar tu visibilidad y ventas.",
     cta: "Agenda una reunión",
@@ -58,9 +58,6 @@ const currentContent = content[currentLang as keyof typeof content];
         <h3 class="text-2xl text-sumat-teal mb-6">
           {currentContent.subtitle}
         </h3>
-        <p class="text-lg text-sumat-teal leading-relaxed mb-8">
-          {currentContent.description}
-        </p>
 
         <!-- Valores -->
         <div class="space-y-6 mb-8">
@@ -76,15 +73,6 @@ const currentContent = content[currentLang as keyof typeof content];
             </div>
           ))}
         </div>
-
-        <!-- CTA -->
-        <a href="https://calendly.com/agenciasumat/30min" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="inline-flex items-center bg-sumat-navy hover:bg-sumat-teal text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
-          <i class="far fa-calendar-alt mr-2"></i>
-          {currentContent.cta}
-        </a>
       </div>
 
       <!-- Imagen/Ilustración -->
